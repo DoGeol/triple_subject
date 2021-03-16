@@ -8,7 +8,7 @@ function setConfig(mode) {
   return {
     mode,
     // entry files
-    entry: ['./src/index.js'],
+    entry: ['./src/index.jsx'],
     // 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -47,7 +47,7 @@ function setConfig(mode) {
       ],
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.json', '.scss'],
+      extensions: ['.js', '.jsx', '.json'],
     },
     plugins: [
       new CleanWebpackPlugin(),
