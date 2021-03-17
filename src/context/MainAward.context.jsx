@@ -6,6 +6,7 @@ const MainAwardContext = createContext({
     alt: '',
   },
   text: '',
+  isFade: false,
 });
 
 export default MainAwardContext;

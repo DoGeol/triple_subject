@@ -9,9 +9,9 @@ const TextInfoProvider = ({ children }) => {
       '360{/}만 개{/}의 여행 일정',
     ],
   };
-  const [mainAwardState] = useState(initialState);
+  const [textInfoState] = useState(initialState);
   return (
-    <TextInfoContext.Provider value={mainAwardState}>
+    <TextInfoContext.Provider value={textInfoState}>
       {children}
     </TextInfoContext.Provider>
   );

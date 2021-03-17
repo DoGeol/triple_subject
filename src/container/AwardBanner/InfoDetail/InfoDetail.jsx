@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './InfoDetail.module.scss';
 import TextInfoItem from '../../../components/TextInfoItem/TextInfoItem';
 import TextInfoProvider from './TextInfo.proviter';
@@ -6,17 +6,39 @@ import AwardInfoItem from '../../../components/AwardInfoItem/AwardInfoItem';
 import AwardInfoProvider from './AwardInfo.provider';
 
 function InfoDetail({ ...props }) {
-  console.log(props);
+  const [isTextFade, setIsTextFade] = useState(true);
+  const [isAwardFade, setIsAwardFade] = useState(true);
+  const textRef = useRef();
+  const awardRef = useRef();
+
+  console.log(textRef, awardRef);
+
+  useEffect(() => {
+    if (isTextFade) {
+      textRef.current.classList.add(styles.fade_active);
+    }
+    if (isAwardFade) {
+      awardRef.current.classList.add(styles.fade_active);
+    }
+    return () => {};
+  });
+
   return (
     <div className={styles.info_detail__container}>
-      <div className={styles.text_info__wrapper}>
+      <div
+        className={`${styles.text_info__wrapper} ${styles.fade_base}`}
+        ref={textRef}
+      >
         <TextInfoProvider>
-          <TextInfoItem textInfoArray={props.textInfo} />
+          <TextInfoItem />
         </TextInfoProvider>
       </div>
-      <div className={styles.award_info__wrapper}>
+      <div
+        className={`${styles.award_info__wrapper} ${styles.fade_base}`}
+        ref={awardRef}
+      >
         <AwardInfoProvider>
-          <AwardInfoItem awardInfoArray={props.awardInfo} />
+          <AwardInfoItem />
         </AwardInfoProvider>
       </div>
     </div>

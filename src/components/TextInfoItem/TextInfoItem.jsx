@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef, useContext, useState } from 'react';
 import styles from './TextInfoItem.module.scss';
+import TextInfoContext from '../../context/TextInfo.context';
 
-function TextInfoItem(props) {
-  console.log('TextInfoItem ::: ', props);
+function TextInfoItem() {
+  const { textInfo } = useContext(TextInfoContext);
   return (
     <>
       <div className={styles.text_info__item}>
