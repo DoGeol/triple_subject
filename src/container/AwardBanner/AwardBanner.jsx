@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.module.scss';
+import styles from './AwardBanner.module.scss';
 import MainAward from './MainAward/MainAward';
 import InfoDetail from './InfoDetail/InfoDetail';
 

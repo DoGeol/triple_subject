@@ -1,5 +1,5 @@
 import React from 'react';
-import AwardBanner from './awardBanner/index';
+import AwardBanner from './AwardBanner/AwardBanner';
 
 function App() {
   return <AwardBanner />;

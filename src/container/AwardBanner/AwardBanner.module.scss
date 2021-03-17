@@ -5,6 +5,11 @@ section.container__wrapper {
   height: auto;
   min-width: 1200px;
 
+  pre,
+  p {
+    font-family: sans-serif;
+  }
+
   .banner__container {
     width: 1040px;
     margin: 0 auto;
