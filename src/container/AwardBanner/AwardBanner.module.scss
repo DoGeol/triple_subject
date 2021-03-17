@@ -16,4 +16,11 @@ section.container__wrapper {
 
     @include clearfix;
   }
+
+  .info_detail__container {
+    float: left;
+    margin-left: 623px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
 }

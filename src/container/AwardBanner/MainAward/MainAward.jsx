@@ -11,6 +11,7 @@ function MainAward() {
     },
     text: '2019년 2월 기준',
   };
+  const [mainAwardInfo, setMainAwardInfo] = useState(initialState);
   const [isFade, setIsFade] = useState(true);
 
   const combineClassName = [styles.main_award__container];
@@ -20,7 +21,7 @@ function MainAward() {
   }
   return (
     <div className={combineClassName.join(' ')}>
-      <MainAwardItem data={initialState} />
+      <MainAwardItem data={mainAwardInfo} />
     </div>
   );
 }
