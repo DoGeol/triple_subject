@@ -1,28 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './AwardInfoItem.module.scss';
+import AwardInfoContext from '../../context/AwardInfo.context';
 
-function AwardInfoItem(props) {
-  console.log('AwardInfoItem ::: ', props);
-  const awardInfoArray = props.awardInfoArray;
-  console.log('awardInfoArray ::: ', awardInfoArray);
+function AwardInfoItem() {
+  const { awardInfo = [] } = useContext(AwardInfoContext);
   return (
     <>
-      <div className={styles.award_info__item}>
-        <img src="/assets/images/play-store@2x.png" alt="playstore" />
-        <p>
-          2018 구글 플레이스토어
-          <br />
-          올해의 앱 최우수상 수상
-        </p>
-      </div>
-      <div className={styles.award_info__item}>
-        <img src="/assets/images/app-store@2x.png" alt="appstore" />
-        <p>
-          2018 애플 앱스토어
-          <br />
-          오늘의 여행앱 선정
-        </p>
-      </div>
+      {awardInfo.map((info, idx) => {
+        return (
+          <div className={styles.award_info__item} key={`awardInfoItem-${idx}`}>
+            <img {...info.img} />
+            <pre>{info.text.join('\n\r')}</pre>
+          </div>
+        );
+      })}
     </>
   );
 }

@@ -1,32 +1,30 @@
-import React, { useRef, useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './TextInfoItem.module.scss';
 import TextInfoContext from '../../context/TextInfo.context';
+import { CountUp } from 'use-count-up';
 
 function TextInfoItem() {
-  const { textInfo } = useContext(TextInfoContext);
+  const { textInfo = [] } = useContext(TextInfoContext);
   return (
     <>
-      <div className={styles.text_info__item}>
-        <p className={styles.strong}>
-          <span className="js-upCnt">630</span>
-          <span>만 명</span>
-          <span>의 여행자</span>
-        </p>
-      </div>
-      <div className={styles.text_info__item}>
-        <p className={styles.strong}>
-          <span className="js-upCnt">95</span>
-          <span>만 개</span>
-          <span>의 여행 리뷰</span>
-        </p>
-      </div>
-      <div className={styles.text_info__item}>
-        <p className={styles.strong}>
-          <span className="js-upCnt">420</span>
-          <span>만 개</span>
-          <span>의 여행 일정</span>
-        </p>
-      </div>
+      {textInfo.map((info, idx) => {
+        const [count, middleText, lastText] = info.split('{/}');
+        return (
+          <div className={styles.text_info__item} key={`textInfo-${idx}`}>
+            <p className={styles.strong}>
+              <CountUp
+                isCounting
+                start={0}
+                end={Number(count)}
+                duration={1.5}
+                easing={'linear'}
+              />
+              <span>{middleText}</span>
+              <span>{lastText}</span>
+            </p>
+          </div>
+        );
+      })}
     </>
   );
 }

@@ -7,11 +7,9 @@ function setConfig(mode) {
   console.log('process.env.NODE_ENV', process.env.NODE_ENV, mode);
   return {
     mode,
-    // entry files
     entry: ['./src/index.jsx'],
-    // 컴파일 + 번들링된 js 파일이 저장될 경로와 이름 지정
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'public'),
       filename: 'js/bundle.js',
     },
     module: {
@@ -42,7 +40,7 @@ function setConfig(mode) {
             {
               loader: 'file-loader',
               options: {
-                name: 'images/[name].[ext]',
+                name: 'assets/images/[contenthash].[ext]',
               },
             },
           ],
@@ -55,7 +53,7 @@ function setConfig(mode) {
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({
-        filename: 'main.css',
+        filename: '[name].[contenthash].css',
       }),
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, '/src', 'index.html'),
