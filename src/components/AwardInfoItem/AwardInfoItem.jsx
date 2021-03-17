@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './AwardInfoItem.module.scss';
 
-function AwardInfoItem() {
+function AwardInfoItem(props) {
+  console.log('AwardInfoItem ::: ', props);
+  const awardInfoArray = props.awardInfoArray;
+  console.log('awardInfoArray ::: ', awardInfoArray);
   return (
     <>
       <div className={styles.award_info__item}>

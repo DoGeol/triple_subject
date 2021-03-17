@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './TextInfoItem.module.scss';
 
-function TextInfoItem() {
+function TextInfoItem(props) {
+  console.log('TextInfoItem ::: ', props);
   return (
     <>
       <div className={styles.text_info__item}>
