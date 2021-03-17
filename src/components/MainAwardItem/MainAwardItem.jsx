@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './MainAwardItem.module.scss';
-import MainAwardContext from '../../context/MainAward.context';
 
-function MainAwardItem() {
-  const { img = {}, text = '' } = useContext(MainAwardContext);
-
+function MainAwardItem(props) {
+  const { img, text } = props.data;
   return (
     <div className={styles.main_award__item}>
       <img {...img} />

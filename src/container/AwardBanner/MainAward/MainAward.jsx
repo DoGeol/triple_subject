@@ -1,28 +1,26 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './MainAward.module.scss';
 import MainAwardItem from '../../../components/MainAwardItem/MainAwardItem';
-import MainAwardProvider from './MainAward.provider';
+import TripleLogo from '../../../assets/images/triple@2x.png';
 
 function MainAward() {
+  const initialState = {
+    img: {
+      src: TripleLogo,
+      alt: 'triple logo image',
+    },
+    text: '2019년 2월 기준',
+  };
   const [isFade, setIsFade] = useState(true);
-  const mainAwardRef = useRef();
-  useEffect(() => {
-    if (isFade) {
-      mainAwardRef.current.classList.add(styles.fade_active);
-    }
-    return () => {};
-  });
 
+  const combineClassName = [styles.main_award__container];
+  if (isFade) {
+    combineClassName.push(styles.fade_base);
+    combineClassName.push(styles.fade_active);
+  }
   return (
-    <div
-      className={`${styles.main_award__container} ${
-        isFade ? styles.fade_base : ''
-      }`}
-      ref={mainAwardRef}
-    >
-      <MainAwardProvider>
-        <MainAwardItem />
-      </MainAwardProvider>
+    <div className={combineClassName.join(' ')}>
+      <MainAwardItem data={initialState} />
     </div>
   );
 }

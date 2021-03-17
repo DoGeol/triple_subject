@@ -1,31 +1,27 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './TextInfoItem.module.scss';
-import TextInfoContext from '../../context/TextInfo.context';
 import { CountUp } from 'use-count-up';
 
-function TextInfoItem() {
-  const { textInfo = [] } = useContext(TextInfoContext);
+function TextInfoItem(props) {
+  const [prefixText, sufixText] = props.data;
+  const countValue = prefixText.match(/[0-9]/g).join('') * 1;
+  const otherText = prefixText.replace(/[0-9]/g, '');
   return (
-    <>
-      {textInfo.map((info, idx) => {
-        const [count, middleText, lastText] = info.split('{/}');
-        return (
-          <div className={styles.text_info__item} key={`textInfo-${idx}`}>
-            <p className={styles.strong}>
-              <CountUp
-                isCounting
-                start={0}
-                end={Number(count)}
-                duration={1.5}
-                easing={'linear'}
-              />
-              <span>{middleText}</span>
-              <span>{lastText}</span>
-            </p>
-          </div>
-        );
-      })}
-    </>
+    <div className={styles.text_info__item}>
+      <p className={styles.strong}>
+        <span>
+          <CountUp
+            isCounting
+            start={0}
+            end={countValue}
+            duration={1.5}
+            easing={'linear'}
+          />
+          {otherText}
+        </span>
+        <span>{sufixText}</span>
+      </p>
+    </div>
   );
 }
 
