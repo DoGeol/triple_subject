@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './InfoDetail.module.scss';
 import TextInfoItem from '../../../components/TextInfoItem/TextInfoItem';
-import TextInfoProvider from './TextInfo.proviter';
+import TextInfoProvider from './TextInfo.provider';
 import AwardInfoItem from '../../../components/AwardInfoItem/AwardInfoItem';
 import AwardInfoProvider from './AwardInfo.provider';
 
