@@ -1,0 +1,14 @@
+@import '/src/styles/mixins';
+
+section.container__wrapper {
+  width: auto;
+  height: auto;
+  min-width: 1200px;
+
+  .banner__container {
+    width: 1040px;
+    margin: 0 auto;
+
+    @include clearfix;
+  }
+}

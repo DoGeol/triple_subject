@@ -1,0 +1,17 @@
+.text_info__item {
+  font-size: 36px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  line-height: 1;
+  color: rgb(58, 58, 58);
+  font-family: sans-serif;
+
+  p.strong {
+    margin: 0;
+    font-weight: bold;
+
+    > span:nth-child(3) {
+      font-weight: normal;
+    }
+  }
+}

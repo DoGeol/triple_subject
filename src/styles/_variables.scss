@@ -1,0 +1,10 @@
+/* Image Path */
+$path-img: './image';
+
+/* Image suffix And Ext */
+$img-suffix-2x-png: '@2x.png';
+
+/* Image File Name */
+$img-triple_logo: $path-img + '/triple' + $img-suffix-2x-png;
+$img-play_store_logo: $path-img + '/play-store' + $img-suffix-2x-png;
+$img-app_store_logo: $path-img + '/app-store' + $img-suffix-2x-png;
