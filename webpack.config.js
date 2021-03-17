@@ -41,6 +41,9 @@ function setConfig(mode) {
           use: [
             {
               loader: 'file-loader',
+              options: {
+                name: 'images/[name].[ext]',
+              },
             },
           ],
         },
