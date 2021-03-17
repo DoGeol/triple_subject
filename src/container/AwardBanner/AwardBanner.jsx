@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './AwardBanner.module.scss';
 import MainAward from './MainAward/MainAward';
-import TextInfo from './TextInfo/TextInfo';
+import StatisticsInfo from './StatisticsInfo/StatisticsInfo';
 import AwardInfo from './AwardInfo/AwardInfo';
 
 function AwardBanner() {
@@ -10,7 +10,7 @@ function AwardBanner() {
       <div className={styles.banner__container}>
         <MainAward />
         <div className={styles.info_detail__container}>
-          <TextInfo />
+          <StatisticsInfo />
           <AwardInfo />
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './MainAward.module.scss';
-import MainAwardItem from '../../../components/MainAwardItem/MainAwardItem';
-import TripleLogo from '../../../assets/images/triple@2x.png';
+import MainAwardItem from '@/components/MainAwardItem/MainAwardItem';
+import TripleLogo from '@/assets/images/triple@2x.png';
 
 function MainAward() {
   const initialState = {
@@ -13,7 +13,6 @@ function MainAward() {
   };
   const [mainAwardInfo, setMainAwardInfo] = useState(initialState);
   const [isFade, setIsFade] = useState(true);
-
   const combineClassName = [styles.main_award__container];
   if (isFade) {
     combineClassName.push(styles.fade_base);

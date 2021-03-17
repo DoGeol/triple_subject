@@ -1,19 +1,19 @@
 import React from 'react';
-import styles from './TextInfoItem.module.scss';
+import styles from './UpCountText.module.scss';
 import { CountUp } from 'use-count-up';
 
-function TextInfoItem(props) {
+function UpCountText(props) {
   const [prefixText, sufixText] = props.data;
-  const countValue = prefixText.match(/[0-9]/g).join('') * 1;
+  const upCountValue = prefixText.match(/[0-9]/g).join('') * 1;
   const otherText = prefixText.replace(/[0-9]/g, '');
   return (
-    <div className={styles.text_info__item}>
+    <div className={styles.up_count_text__item}>
       <p className={styles.strong}>
         <span>
           <CountUp
             isCounting
             start={0}
-            end={countValue}
+            end={upCountValue}
             duration={1.5}
             easing={'linear'}
           />
@@ -25,4 +25,4 @@ function TextInfoItem(props) {
   );
 }
 
-export default TextInfoItem;
+export default UpCountText;
