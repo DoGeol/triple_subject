@@ -10,7 +10,7 @@ function setConfig(mode) {
     entry: ['./src/index.jsx'],
     output: {
       path: path.resolve(__dirname, 'public'),
-      filename: 'js/bundle.js',
+      filename: 'js/bundle.[contenthash].js',
     },
     module: {
       rules: [
