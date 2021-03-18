@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './AwardInfo.module.scss';
 import AwardInfoItem from '@/components/AwardInfoItem/AwardInfoItem';
 import PlayStoreLogo from '@/assets/images/play-store@2x.png';
 import AppStoreLogo from '@/assets/images/app-store@2x.png';
+import config from '@/commons/config';
 
 function AwardInfo() {
   const initialState = {
@@ -23,16 +24,14 @@ function AwardInfo() {
       },
     ],
   };
-  const [awards, setAwards] = useState(initialState.awardInfo);
-  const [isFade, setIsAwardFade] = useState(true);
   const combineClassName = [styles.award_info__wrapper];
-  if (isFade) {
+  if (config.awardInfo.isFade) {
     combineClassName.push(styles.fade_base);
     combineClassName.push(styles.fade_active);
   }
   return (
     <div className={combineClassName.join(' ')}>
-      {awards.map((award, idx) => {
+      {initialState.awardInfo.map((award, idx) => {
         return <AwardInfoItem data={award} key={`awardInfoItem-${idx}`} />;
       })}
     </div>

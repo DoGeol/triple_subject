@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './StatisticsInfo.module.scss';
 import UpCountText from '@/components/UpCountText/UpCountText';
+import config from '@/commons/config';
 
 function StatisticsInfo() {
   const initialState = {
@@ -10,18 +11,14 @@ function StatisticsInfo() {
       ['650만 개', '의 여행 일정'],
     ],
   };
-  const [statisticsInfo, setStatisticsItems] = useState(
-    initialState.statisticsInfo,
-  );
-  const [isFade, setIsFade] = useState(true);
   const combineClassName = [styles.text_info__wrapper];
-  if (isFade) {
+  if (config.statisticsInfo.isFade) {
     combineClassName.push(styles.fade_base);
     combineClassName.push(styles.fade_active);
   }
   return (
     <div className={combineClassName.join(' ')}>
-      {statisticsInfo.map((item, idx) => {
+      {initialState.statisticsInfo.map((item, idx) => {
         return <UpCountText data={item} key={`textInfoItem-${idx}`} />;
       })}
     </div>
