@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './UpCountText.module.scss';
 import { CountUp } from 'use-count-up';
+import styles from './UpCountText.module.scss';
 
-function UpCountText(props) {
-  const [prefixText, sufixText] = props.data;
+function UpCountText({ data }) {
+  const [prefixText, suffixText] = data;
   const upCountValue = prefixText.match(/[0-9]/g).join('') * 1;
   const otherText = prefixText.replace(/[0-9]/g, '');
   return (
@@ -15,11 +15,11 @@ function UpCountText(props) {
             start={0}
             end={upCountValue}
             duration={1.5}
-            easing={'linear'}
+            easing="linear"
           />
           {otherText}
         </span>
-        <span>{sufixText}</span>
+        <span>{suffixText}</span>
       </p>
     </div>
   );

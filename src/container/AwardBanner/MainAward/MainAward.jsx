@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './MainAward.module.scss';
 import MainAwardItem from '@/components/MainAwardItem/MainAwardItem';
 import TripleLogo from '@/assets/images/triple@2x.png';
 import config from '@/commons/config';
+import styles from './MainAward.module.scss';
 
 function MainAward() {
   const initialState = {

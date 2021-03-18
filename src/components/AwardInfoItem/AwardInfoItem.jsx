@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './AwardInfoItem.module.scss';
 
-function AwardInfoItem(props) {
-  const { img, text } = props.data;
+function AwardInfoItem({ data }) {
+  const { img, text } = data;
   return (
     <div className={styles.award_info__item}>
-      <img {...img} />
+      <img src={img.src} alt={img.alt} />
       <pre>{text}</pre>
     </div>
   );
