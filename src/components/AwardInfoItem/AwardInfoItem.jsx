@@ -6,7 +6,7 @@ function AwardInfoItem(props) {
   return (
     <div className={styles.award_info__item}>
       <img {...img} />
-      <pre>{text.join('\n\r')}</pre>
+      <pre>{text}</pre>
     </div>
   );
 }
