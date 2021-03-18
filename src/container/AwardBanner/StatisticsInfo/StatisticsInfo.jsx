@@ -28,7 +28,6 @@ function StatisticsInfo() {
   return (
     <div className={combineClassName.join(' ')}>
       {initialState.statisticsInfo.map((statisticsItem) => (
-        // eslint-disable-next-line react/no-array-index-key
         <UpCountText data={statisticsItem.text} key={statisticsItem.id} />
       ))}
     </div>

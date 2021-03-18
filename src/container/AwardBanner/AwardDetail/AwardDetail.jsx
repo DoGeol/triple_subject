@@ -1,11 +1,11 @@
 import React from 'react';
-import AwardInfoItem from '@/components/AwardInfoItem/AwardInfoItem';
+import AwardDetailItem from '@/components/AwardDetailItem/AwardDetailItem';
 import PlayStoreLogo from '@/assets/images/play-store@2x.png';
 import AppStoreLogo from '@/assets/images/app-store@2x.png';
 import config from '@/commons/config';
-import styles from './AwardInfo.module.scss';
+import styles from './AwardDetail.module.scss';
 
-function AwardInfo() {
+function AwardDetail() {
   const initialState = {
     awardInfo: [
       {
@@ -34,10 +34,10 @@ function AwardInfo() {
   return (
     <div className={combineClassName.join(' ')}>
       {initialState.awardInfo.map((awardItem) => (
-        <AwardInfoItem data={awardItem} key={awardItem.id} />
+        <AwardDetailItem data={awardItem} key={awardItem.id} />
       ))}
     </div>
   );
 }
 
-export default AwardInfo;
+export default AwardDetail;

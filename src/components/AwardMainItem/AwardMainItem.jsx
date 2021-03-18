@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './MainAwardItem.module.scss';
+import styles from './AwardMainItem.module.scss';
 
-function MainAwardItem({ data }) {
+function AwardMainItem({ data }) {
   const { img, text } = data;
   return (
     <div className={styles.main_award__item}>
@@ -11,4 +11,4 @@ function MainAwardItem({ data }) {
   );
 }
 
-export default MainAwardItem;
+export default AwardMainItem;

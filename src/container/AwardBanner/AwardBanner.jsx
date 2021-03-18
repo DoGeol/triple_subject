@@ -1,17 +1,17 @@
 import React from 'react';
 import styles from './AwardBanner.module.scss';
-import MainAward from './MainAward/MainAward';
+import AwardMain from './AwardMain/AwardMain';
 import StatisticsInfo from './StatisticsInfo/StatisticsInfo';
-import AwardInfo from './AwardInfo/AwardInfo';
+import AwardDetail from './AwardDetail/AwardDetail';
 
 function AwardBanner() {
   return (
     <section className={styles.container__wrapper}>
       <div className={styles.banner__container}>
-        <MainAward />
+        <AwardMain />
         <div className={styles.info_detail__container}>
           <StatisticsInfo />
-          <AwardInfo />
+          <AwardDetail />
         </div>
       </div>
     </section>

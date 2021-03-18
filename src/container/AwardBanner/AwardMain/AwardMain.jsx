@@ -1,10 +1,10 @@
 import React from 'react';
-import MainAwardItem from '@/components/MainAwardItem/MainAwardItem';
+import AwardMainItem from '@/components/AwardMainItem/AwardMainItem';
 import TripleLogo from '@/assets/images/triple@2x.png';
 import config from '@/commons/config';
-import styles from './MainAward.module.scss';
+import styles from './AwardMain.module.scss';
 
-function MainAward() {
+function AwardMain() {
   const initialState = {
     img: {
       src: TripleLogo,
@@ -19,9 +19,9 @@ function MainAward() {
   }
   return (
     <div className={combineClassName.join(' ')}>
-      <MainAwardItem data={initialState} />
+      <AwardMainItem data={initialState} />
     </div>
   );
 }
 
-export default MainAward;
+export default AwardMain;
